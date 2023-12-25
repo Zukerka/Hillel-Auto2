@@ -5,11 +5,7 @@ describe('Hillel Auto tests', () => {
 
     it('Update avatar', () => {
         cy.visit(`https://${userAndPass}@qauto.forstudy.space`)
-        cy.request('POST', 'https://qauto.forstudy.space/api/auth/signin', {
-            "email": Cypress.env('myUser'),
-            "password": Cypress.env('myUserPassword'),
-            "remember": false
-        })
+        cy.login(Cypress.env('myUser'), Cypress.env('myUserPassword'))
         cy.visit(`https://${userAndPass}@qauto.forstudy.space/panel/profile`)
         cy.contains('button', 'Edit profile').click();
         cy.get('input#editProfilePhoto').selectFile('cypress/img/photo.jpeg')
