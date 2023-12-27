@@ -15,7 +15,5 @@ describe('Hillel Auto tests', () => {
             expect(res.statusCode).eq(200)
         })
 
-        // cy.wait(1000)
-        // cy.pause()
     })
 })
